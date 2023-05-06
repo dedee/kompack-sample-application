@@ -1,0 +1,30 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.8.21'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.21'
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'com.wunderbee.kompack', name: 'kompack-kotlin-serialization', version: '0.0.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+kotlin {
+    jvmToolchain(11)
+}
+
+application {
+    mainClassName = 'MainKt'
+}
